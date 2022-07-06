@@ -48,11 +48,10 @@ console.log(`Sum of all the elements of myArr is ${recurSum(myArr)}`);
     // Fifth
 
 const arr = [0, 2, 4, 5, 7, 10, 2, 3, 5, 6, 10, 3];
-let sumTen = 0
-function recurSumTen(arr, index = 0) {
-    if (index === arr.length) return sumTen;
-    if (arr[index] === 10) sumTen += arr[index];
-    return recurSumTen(arr, ++index);
+function recurSumTen(arr, acum = 0, index = 0) {
+    if (index === arr.length) return acum;
+    if (arr[index] === 10) acum += arr[index];
+    return recurSumTen(arr, acum, ++index);
 }
 console.log(`Sum of all 10 in arr is ${recurSumTen(arr)}`);
 
